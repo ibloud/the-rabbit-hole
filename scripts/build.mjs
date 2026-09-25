@@ -9,8 +9,8 @@ fs.cpSync('content/rooms', 'dist/content/rooms', { recursive: true });
 
 fs.mkdirSync('dist/ink', { recursive: true });
 execFileSync(
-  process.execPath,
-  ['node_modules/inkjs/bin/inkjs-compiler.js', '-o', 'dist/ink/rabbit-hole.json', 'ink/rabbit-hole.ink'],
+  'npx',
+  ['--no-install', 'inkjs', '-o', 'dist/ink/rabbit-hole.json', 'ink/rabbit-hole.ink'],
   { stdio: 'inherit' }
 );
 fs.copyFileSync('node_modules/inkjs/dist/ink.js', 'dist/inkjs.js');
