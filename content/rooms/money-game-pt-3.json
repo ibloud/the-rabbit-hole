@@ -1,0 +1,34 @@
+{
+  "id": "money-game-pt-3",
+  "title": "Money Game Pt. 3",
+  "track": "narrative",
+  "description": "A room about value, leverage, and the choices that become visible when the price of entry changes.",
+  "background": null,
+  "video": null,
+  "audio": null,
+  "contentNote": "Prototype content fixture. Replace with cleared production media.",
+  "hotspots": [
+    {
+      "id": "table",
+      "label": "The Table",
+      "position": {
+        "x": 38,
+        "y": 52
+      },
+      "type": "dialogue",
+      "dialogue": "Every offer changes the room. The question is what you give up before you notice the cost.",
+      "accessibilityLabel": "The Table: inspect the first clue."
+    },
+    {
+      "id": "ledger",
+      "label": "The Ledger",
+      "position": {
+        "x": 72,
+        "y": 36
+      },
+      "type": "dialogue",
+      "dialogue": "Numbers remember what people prefer to forget.",
+      "accessibilityLabel": "The Ledger: inspect the second clue."
+    }
+  ]
+}
