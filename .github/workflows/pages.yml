@@ -1,4 +1,5 @@
 name: Build and Deploy Pages
+# Rebuild Pages after Ink entry-point correction
 on:
   push:
     branches: [main]
