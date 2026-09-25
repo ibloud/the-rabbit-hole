@@ -1,0 +1,10 @@
+{
+  "id":"money-game-pt3","title":"Money Game Pt. 3","track":"narrative",
+  "description":"A room where the board is treated as a power map rather than a prediction market.",
+  "background":null,"video":null,"audio":null,
+  "contentNote":"Prototype content fixture. Replace with cleared production media.",
+  "hotspots":[
+    {"id":"board","label":"Board","position":{"x":45,"y":38},"type":"dialogue","dialogue":"The event changes conditions. The player still has to decide where to commit influence.","accessibilityLabel":"Board: inspect the current event and its strategic consequence."},
+    {"id":"ledger","label":"Ledger","position":{"x":70,"y":72},"type":"dialogue","dialogue":"A ledger records a shift. It does not decide what the player should do.","accessibilityLabel":"Ledger: inspect the measurable board change."}
+  ]
+}
