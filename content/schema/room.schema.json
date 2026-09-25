@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Rabbit Hole Room","type":"object",
+  "required":["id","title","track","description","hotspots"],
+  "properties":{
+    "id":{"type":"string"},"title":{"type":"string"},"track":{"type":"string"},"description":{"type":"string"},
+    "background":{"type":["string","null"]},"video":{"type":["string","null"]},"audio":{"type":["string","null"]},
+    "contentNote":{"type":["string","null"]},
+    "hotspots":{"type":"array","items":{"type":"object","required":["id","label","type","dialogue","accessibilityLabel"],
+      "properties":{"id":{"type":"string"},"label":{"type":"string"},"position":{"type":"object"},"type":{"type":"string"},
+      "dialogue":{"type":"string"},"accessibilityLabel":{"type":"string"},"relatedProduct":{"type":["object","null"]}}}}
+  }
+}
