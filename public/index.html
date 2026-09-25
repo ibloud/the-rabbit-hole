@@ -1,4 +1,35 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rabbit Hole</title><link rel="stylesheet" href="style.css"></head>
-<body><main><header><p class="eyebrow">THREE-ROOM PROTOTYPE</p><h1>Rabbit Hole</h1><p>Sanity-compatible content. Ink narrative. Accessible interaction. Shopify-ready references.</p></header><nav id="rooms" aria-label="Rooms"></nav><section id="room" aria-live="polite"></section></main><script type="module" src="app.js"></script></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The Rabbit Hole — a three-room interactive narrative prototype.">
+  <title>The Rabbit Hole</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">INPATIENT CORRIDORS / PROTOTYPE 01</p>
+        <h1>The Rabbit Hole</h1>
+        <p class="dek">Three rooms. Three ways in. Follow the clue, touch the boundary, see what opens.</p>
+      </div>
+      <div class="status"><span class="dot"></span><span>LIVE BUILD</span></div>
+    </header>
+
+    <nav id="rooms" class="room-nav" aria-label="Rooms"></nav>
+
+    <section id="room" class="scene" aria-live="polite">
+      <div class="loading">Entering the rabbit hole…</div>
+    </section>
+
+    <footer>
+      <span>INK / SANITY-COMPATIBLE CONTENT</span>
+      <span>ACCESSIBLE PROTOTYPE</span>
+    </footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
