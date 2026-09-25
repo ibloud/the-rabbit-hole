@@ -1,0 +1,1 @@
+import fs from 'node:fs';fs.rmSync('dist',{recursive:true,force:true});fs.cpSync('public','dist',{recursive:true});fs.mkdirSync('dist/content/rooms',{recursive:true});fs.cpSync('content/rooms','dist/content/rooms',{recursive:true});console.log('Browser build written to dist/');
