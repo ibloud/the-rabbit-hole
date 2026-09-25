@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="The Rabbit Hole — a three-room interactive narrative prototype.">
-  <title>The Rabbit Hole</title>
+  <meta name="description" content="The Rabbit Hole — an Ink-powered interactive narrative game.">
+  <title>The Rabbit Hole — Ink Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,24 +12,23 @@
   <main class="shell">
     <header class="masthead">
       <div>
-        <p class="eyebrow">INPATIENT CORRIDORS / PROTOTYPE 01</p>
+        <p class="eyebrow">INK / RABBIT HOLE / PLAYABLE BUILD</p>
         <h1>The Rabbit Hole</h1>
-        <p class="dek">Three rooms. Three ways in. Follow the clue, touch the boundary, see what opens.</p>
+        <p class="dek">The actual Ink story is here. Choose where to go, follow the thread, and return to the room selector when you are ready.</p>
       </div>
-      <div class="status"><span class="dot"></span><span>LIVE BUILD</span></div>
+      <div class="status"><span class="dot"></span><span>INK LIVE</span></div>
     </header>
 
-    <nav id="rooms" class="room-nav" aria-label="Rooms"></nav>
-
-    <section id="room" class="scene" aria-live="polite">
-      <div class="loading">Entering the rabbit hole…</div>
+    <section id="game" class="game" aria-live="polite">
+      <div class="loading">Loading the Ink story…</div>
     </section>
 
     <footer>
-      <span>INK / SANITY-COMPATIBLE CONTENT</span>
-      <span>ACCESSIBLE PROTOTYPE</span>
+      <span>INK SOURCE: ink/rabbit-hole.ink</span>
+      <span>COMPILED WITH INKJS</span>
     </footer>
   </main>
+  <script src="inkjs.js"></script>
   <script type="module" src="app.js"></script>
 </body>
 </html>
