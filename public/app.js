@@ -52,7 +52,7 @@ function advance(story) {
 }
 
 async function loadStory() {
-  const response = await fetch("ink/rabbit-hole.json");
+  const response = await fetch("ink/rabbit-hole.json?v=20260925-2");
   if (!response.ok) throw new Error(`Unable to load compiled Ink story: ${response.status}`);
   const json = await response.text();
   return new window.inkjs.Story(json);
