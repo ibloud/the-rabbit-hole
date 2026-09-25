@@ -1,0 +1,10 @@
+{
+  "id":"sick-boi","title":"Sick Boi","track":"narrative",
+  "description":"A room about authorship, identity, and the distance between an artifact and the person who made it.",
+  "background":null,"video":null,"audio":null,
+  "contentNote":"Prototype content fixture. Replace with cleared production media.",
+  "hotspots":[
+    {"id":"record","label":"Record","position":{"x":32,"y":42},"type":"dialogue","dialogue":"The record carries a history, but history is not the same thing as consent.","accessibilityLabel":"Record: inspect the authorship clue."},
+    {"id":"door","label":"Door","position":{"x":74,"y":60},"type":"dialogue","dialogue":"Some doors are invitations. Some are boundaries.","accessibilityLabel":"Door: inspect the boundary clue."}
+  ]
+}
