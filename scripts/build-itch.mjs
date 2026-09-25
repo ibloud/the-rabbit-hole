@@ -1,0 +1,1 @@
+import fs from 'node:fs';import {execFileSync} from 'node:child_process';execFileSync(process.execPath,['scripts/build.mjs'],{stdio:'inherit'});fs.mkdirSync('artifacts',{recursive:true});execFileSync('zip',['-qr','artifacts/rabbit-hole-itch.zip','dist']);console.log('itch artifact written to artifacts/rabbit-hole-itch.zip');
