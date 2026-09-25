@@ -1,0 +1,10 @@
+{
+  "id":"seven-sins","title":"Seven Sins","track":"narrative",
+  "description":"A room built around discovery, choice, and consequence.",
+  "background":null,"video":null,"audio":null,
+  "contentNote":"Prototype content fixture. Replace with cleared production media.",
+  "hotspots":[
+    {"id":"threshold","label":"Threshold","position":{"x":24,"y":48},"type":"dialogue","dialogue":"The room waits for a choice.","accessibilityLabel":"Threshold: inspect the room's opening clue."},
+    {"id":"mirror","label":"Mirror","position":{"x":68,"y":35},"type":"dialogue","dialogue":"What you notice changes what becomes visible next.","accessibilityLabel":"Mirror: inspect the second clue."}
+  ]
+}
