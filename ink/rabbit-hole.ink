@@ -1,5 +1,7 @@
 VAR room = "seven-sins"
 
+-> start
+
 === start ===
 # Rabbit Hole
 A portable three-room narrative prototype.
