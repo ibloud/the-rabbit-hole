@@ -1,0 +1,12 @@
+{
+  "name": "rabbit-hole",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-content.mjs",
+    "test": "node tests/runtime/smoke.mjs",
+    "build": "node scripts/build.mjs",
+    "build:itch": "node scripts/build-itch.mjs"
+  }
+}
