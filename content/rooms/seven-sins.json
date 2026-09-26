@@ -40,6 +40,16 @@
     "officialWebsite": {
       "label": "RENMAKESMUSIC.COM",
       "url": "https://www.renmakesmusic.com/"
-    }
+    },
+    "officialMerch": [
+      {
+        "label": "OFFICIAL REN MERCH — RABBIT HOLE HOODIE",
+        "url": "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoodie"
+      },
+      {
+        "label": "OFFICIAL REN MERCH STORE ↗",
+        "url": "https://renmakesmerch.com/"
+      }
+    ]
   }
 }
