@@ -30,5 +30,16 @@
       "dialogue": "The mirror gives you the wrong answer first.",
       "accessibilityLabel": "Mirror: inspect the second clue."
     }
-  ]
+  ],
+  "links": {
+    "appleMusic": "https://music.apple.com/us/song/1764550134",
+    "purchase": {
+      "label": "BUY / DOWNLOAD OFFICIAL RELEASE",
+      "url": "https://renmakesmusic.bandcamp.com/album/sick-boi"
+    },
+    "officialWebsite": {
+      "label": "RENMAKESMUSIC.COM",
+      "url": "https://www.renmakesmusic.com/"
+    }
+  }
 }
