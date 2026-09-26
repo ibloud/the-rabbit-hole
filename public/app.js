@@ -1,4 +1,12 @@
 const root = document.querySelector("#game");
+const CACHE_BUST = "20260925-3";
+const rooms = [
+  "seven-sins.json",
+  "sick-boi.json",
+  "money-game-pt-3.json"
+];
+
+let roomData = new Map();
 
 function addBlock(className, text) {
   const el = document.createElement("div");
@@ -8,12 +16,82 @@ function addBlock(className, text) {
   return el;
 }
 
+async function loadRooms() {
+  const entries = await Promise.all(
+    rooms.map(async (file) => {
+      const response = await fetch(`content/rooms/${file}?v=${CACHE_BUST}`);
+      if (!response.ok) throw new Error(`Unable to load room data: ${file}`);
+      return response.json();
+    })
+  );
+  roomData = new Map(entries.map((room) => [room.id, room]));
+}
+
+function renderRoomMedia(room) {
+  if (!room || (!room.video && !room.background && !room.audio)) return;
+
+  const media = document.createElement("div");
+  media.className = "room-media";
+
+  if (room.video) {
+    const video = document.createElement("video");
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.src = room.video;
+    video.setAttribute("aria-label", `${room.title} video`);
+    media.append(video);
+  }
+
+  if (room.background && !room.video) {
+    const image = document.createElement("img");
+    image.src = room.background;
+    image.alt = `${room.title} room`;
+    media.append(image);
+  }
+
+  if (room.audio) {
+    const audio = document.createElement("audio");
+    audio.controls = true;
+    audio.src = room.audio;
+    audio.setAttribute("aria-label", `${room.title} audio`);
+    media.append(audio);
+  }
+
+  root.append(media);
+}
+
+function renderRoomCard(room) {
+  const card = document.createElement("section");
+  card.className = "room-card";
+
+  const label = document.createElement("div");
+  label.className = "room-label";
+  label.textContent = "ROOM / " + room.id.toUpperCase();
+  card.append(label);
+
+  const title = document.createElement("h2");
+  title.textContent = room.title;
+  card.append(title);
+
+  const description = document.createElement("p");
+  description.textContent = room.description;
+  card.append(description);
+
+  const note = document.createElement("p");
+  note.className = "media-note";
+  note.textContent = room.video
+    ? "VIDEO ATTACHED"
+    : "MEDIA SLOT OPEN — NO VIDEO FILE IS PRESENT IN THIS BUILD";
+  card.append(note);
+
+  return card;
+}
+
 function renderChoices(story) {
   const choices = story.currentChoices || [];
   if (!choices.length) {
-    if (!story.canContinue) {
-      addBlock("ending", "The story has reached its end.");
-    }
+    if (!story.canContinue) addBlock("ending", "The thread ends here.");
     return;
   }
 
@@ -25,10 +103,11 @@ function renderChoices(story) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "choice";
-    button.innerHTML = `<small>CHOICE 0${index + 1}</small>`;
+    const number = document.createElement("small");
+    number.textContent = `CHOICE 0${index + 1}`;
     const label = document.createElement("span");
     label.textContent = choice.text;
-    button.append(label);
+    button.append(number, label);
     button.addEventListener("click", () => {
       story.ChooseChoiceIndex(index);
       advance(story);
@@ -45,6 +124,15 @@ function advance(story) {
   while (story.canContinue) {
     const text = story.Continue().trim();
     if (text) addBlock("story-line", text);
+
+    const match = text.match(/SEVEN SINS|SICK BOI|MONEY GAME PT\. 3/);
+    if (match) {
+      const room = [...roomData.values()].find((item) => item.title.toUpperCase() === match[0]);
+      if (room) {
+        root.append(renderRoomCard(room));
+        renderRoomMedia(room);
+      }
+    }
   }
 
   renderChoices(story);
@@ -52,15 +140,14 @@ function advance(story) {
 }
 
 async function loadStory() {
-  const response = await fetch("ink/rabbit-hole.json?v=20260925-2");
+  const response = await fetch(`ink/rabbit-hole.json?v=${CACHE_BUST}`);
   if (!response.ok) throw new Error(`Unable to load compiled Ink story: ${response.status}`);
-  const json = await response.text();
-  return new window.inkjs.Story(json);
+  return new window.inkjs.Story(await response.text());
 }
 
-loadStory()
-  .then(advance)
+Promise.all([loadRooms(), loadStory()])
+  .then(([, story]) => advance(story))
   .catch((error) => {
     root.replaceChildren();
-    addBlock("error", `Ink build error: ${error.message}`);
+    addBlock("error", `Rabbit Hole build error: ${error.message}`);
   });
