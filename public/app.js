@@ -93,15 +93,6 @@ function renderRoomMedia(room) {
     release.textContent = room.links.directRelease.label || "DIRECT RELEASE ↗";
     links.append(release);
   }
-  if (room.links?.optionalMerch?.url) {
-    const merch = document.createElement("a");
-    merch.href = room.links.optionalMerch.url;
-    merch.target = "_blank";
-    merch.rel = "noopener noreferrer";
-    merch.textContent = room.links.optionalMerch.label || "OPTIONAL SUPPORT ↗";
-    links.append(merch);
-  }
-
   if (room.links?.officialWebsite?.url) {
     const official = document.createElement("a");
     official.href = room.links.officialWebsite.url;
