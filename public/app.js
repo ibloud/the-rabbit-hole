@@ -1,5 +1,5 @@
 const root = document.querySelector("#game");
-const CACHE_BUST = "20260925-7";
+const CACHE_BUST = "20260925-8";
 const rooms = [
   "seven-sins.json",
   "sick-boi.json",
@@ -77,30 +77,40 @@ function renderRoomMedia(room) {
 
   const links = document.createElement("div");
   links.className = "room-links";
-  if (room.links?.appleMusic) {
-    const apple = document.createElement("a");
-    apple.href = room.links.appleMusic;
-    apple.target = "_blank";
-    apple.rel = "noopener noreferrer";
-    apple.textContent = "APPLE MUSIC ↗";
-    links.append(apple);
-  }
+
+  const appendLink = (href, text) => {
+    const link = document.createElement("a");
+    link.href = href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = text;
+    links.append(link);
+  };
+
+  if (room.links?.appleMusic) appendLink(room.links.appleMusic, "APPLE MUSIC ↗");
   if (room.links?.directRelease?.url) {
-    const release = document.createElement("a");
-    release.href = room.links.directRelease.url;
-    release.target = "_blank";
-    release.rel = "noopener noreferrer";
-    release.textContent = room.links.directRelease.label || "DIRECT RELEASE ↗";
-    links.append(release);
+    const link = document.createElement("a");
+    link.href = room.links.directRelease.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = room.links.directRelease.label || "DIRECT RELEASE ↗";
+    links.append(link);
   }
   if (room.links?.officialWebsite?.url) {
-    const official = document.createElement("a");
-    official.href = room.links.officialWebsite.url;
-    official.target = "_blank";
-    official.rel = "noopener noreferrer";
-    official.textContent = room.links.officialWebsite.label || "OFFICIAL WEBSITE ↗";
-    links.append(official);
+    const link = document.createElement("a");
+    link.href = room.links.officialWebsite.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = room.links.officialWebsite.label || "OFFICIAL WEBSITE ↗";
+    links.append(link);
   }
+  if (room.links?.optionalMerch?.url) {
+    const merch = document.createElement("a");
+    merch.href = room.links.optionalMerch.url;
+    merch.textContent = room.links.optionalMerch.label || "OPTIONAL SUPPORT / OFFICIAL REN MERCH ↗";
+    links.append(merch);
+  }
+
   media.append(links);
   root.append(media);
 }
