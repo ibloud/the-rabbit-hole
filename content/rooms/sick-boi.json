@@ -2,7 +2,7 @@
   "id": "sick-boi",
   "title": "Sick Boi",
   "track": "narrative",
-  "description": "A room about authorship, identity, and the distance between an artifact and the person who made it.",
+  "description": "A room about authorship, identity, commodification, and the distance between an artifact and the person who made it.",
   "background": null,
   "video": "https://www.youtube.com/embed/3Q6uCrpzbPY",
   "audio": null,
@@ -11,45 +11,33 @@
     {
       "id": "record",
       "label": "Record",
-      "position": {
-        "x": 32,
-        "y": 42
-      },
+      "position": {"x": 32, "y": 42},
       "type": "dialogue",
-      "dialogue": "The record separates the artifact from the person who made it.",
+      "dialogue": "An artist can put work into a market without reducing the work to its price. The tension belongs in the room.",
       "accessibilityLabel": "Record: inspect the authorship clue."
     },
     {
       "id": "door",
       "label": "Door",
-      "position": {
-        "x": 74,
-        "y": 60
-      },
+      "position": {"x": 74, "y": 60},
       "type": "dialogue",
-      "dialogue": "The door is marked as a boundary rather than an invitation.",
+      "dialogue": "The door marks a boundary rather than an invitation. You decide whether to cross it.",
       "accessibilityLabel": "Door: inspect the boundary clue."
     }
   ],
   "links": {
-    "appleMusic": "https://music.apple.com/us/song/1845320838",
-    "purchase": {
-      "label": "BUY / DOWNLOAD OFFICIAL RELEASE",
-      "url": "https://renmakesmusic.bandcamp.com/album/sick-boi"
+    "appleMusic": "https://music.apple.com/us/album/sick-boi/1845320617?i=1845320838",
+    "directRelease": {
+      "label": "DIRECT RELEASE / BANDCAMP ↗",
+      "url": "https://renmakesmusic.bandcamp.com/track/sick-boi"
     },
     "officialWebsite": {
-      "label": "RENMAKESMUSIC.COM",
+      "label": "OFFICIAL MUSIC SOURCE ↗",
       "url": "https://www.renmakesmusic.com/"
     },
-    "officialMerch": [
-      {
-        "label": "OFFICIAL REN MERCH — RABBIT HOLE HOODIE",
-        "url": "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoodie"
-      },
-      {
-        "label": "OFFICIAL REN MERCH STORE ↗",
-        "url": "https://renmakesmerch.com/"
-      }
-    ]
+    "optionalMerch": {
+      "label": "OPTIONAL SUPPORT / RABBIT HOLE HOODIE ↗",
+      "url": "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoody"
+    }
   }
 }
