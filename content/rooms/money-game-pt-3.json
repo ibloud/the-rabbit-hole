@@ -2,54 +2,42 @@
   "id": "money-game-pt-3",
   "title": "Money Game Pt. 3",
   "track": "narrative",
-  "description": "A room about value, leverage, and the choices that become visible when the price of entry changes.",
+  "description": "A room about value, leverage, incentives, and the choices that become visible when money enters the frame.",
   "background": null,
   "video": "https://www.youtube.com/embed/nyWbun_PbTc",
   "audio": null,
-  "contentNote": "Public video embed: Ren — Money Game Pt. 3 (Official Music Video).",
+  "contentNote": "Public video embed: Ren — Money Game Part 3 (Official Music Video).",
   "hotspots": [
     {
       "id": "table",
       "label": "The Table",
-      "position": {
-        "x": 38,
-        "y": 52
-      },
+      "position": {"x": 38, "y": 52},
       "type": "dialogue",
-      "dialogue": "Every offer changes the room. The question is what you give up before you notice the cost.",
+      "dialogue": "Every offer changes the room. The question is what the exchange makes visible, and what it asks you to ignore.",
       "accessibilityLabel": "The Table: inspect the first clue."
     },
     {
       "id": "ledger",
       "label": "The Ledger",
-      "position": {
-        "x": 72,
-        "y": 36
-      },
+      "position": {"x": 72, "y": 36},
       "type": "dialogue",
-      "dialogue": "Numbers remember what people prefer to forget.",
+      "dialogue": "Numbers can record an exchange without explaining its human cost.",
       "accessibilityLabel": "The Ledger: inspect the second clue."
     }
   ],
   "links": {
-    "appleMusic": "https://music.apple.com/us/song/1764550145",
-    "purchase": {
-      "label": "BUY / DOWNLOAD OFFICIAL RELEASE",
+    "appleMusic": "https://music.apple.com/us/album/money-game-pt-3/1764550131?i=1764550145",
+    "directRelease": {
+      "label": "DIRECT RELEASE / BANDCAMP ↗",
       "url": "https://renmakesmusic.bandcamp.com/album/sick-boi"
     },
     "officialWebsite": {
-      "label": "RENMAKESMUSIC.COM",
+      "label": "OFFICIAL MUSIC SOURCE ↗",
       "url": "https://www.renmakesmusic.com/"
     },
-    "officialMerch": [
-      {
-        "label": "OFFICIAL REN MERCH — RABBIT HOLE HOODIE",
-        "url": "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoodie"
-      },
-      {
-        "label": "OFFICIAL REN MERCH STORE ↗",
-        "url": "https://renmakesmerch.com/"
-      }
-    ]
+    "optionalMerch": {
+      "label": "OPTIONAL SUPPORT / RABBIT HOLE HOODIE ↗",
+      "url": "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoody"
+    }
   }
 }
