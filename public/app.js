@@ -1,5 +1,5 @@
 const root = document.querySelector("#game");
-const CACHE_BUST = "20260925-6";
+const CACHE_BUST = "20260925-7";
 const rooms = [
   "seven-sins.json",
   "sick-boi.json",
@@ -85,23 +85,21 @@ function renderRoomMedia(room) {
     apple.textContent = "APPLE MUSIC ↗";
     links.append(apple);
   }
-  if (room.links?.purchase?.url) {
-    const buy = document.createElement("a");
-    buy.href = room.links.purchase.url;
-    buy.target = "_blank";
-    buy.rel = "noopener noreferrer";
-    buy.textContent = room.links.purchase.label || "BUY / DOWNLOAD ↗";
-    links.append(buy);
+  if (room.links?.directRelease?.url) {
+    const release = document.createElement("a");
+    release.href = room.links.directRelease.url;
+    release.target = "_blank";
+    release.rel = "noopener noreferrer";
+    release.textContent = room.links.directRelease.label || "DIRECT RELEASE ↗";
+    links.append(release);
   }
-  if (room.links?.officialMerch) {
-    room.links.officialMerch.forEach((item) => {
-      const merch = document.createElement("a");
-      merch.href = item.url;
-      merch.target = "_blank";
-      merch.rel = "noopener noreferrer";
-      merch.textContent = item.label;
-      links.append(merch);
-    });
+  if (room.links?.optionalMerch?.url) {
+    const merch = document.createElement("a");
+    merch.href = room.links.optionalMerch.url;
+    merch.target = "_blank";
+    merch.rel = "noopener noreferrer";
+    merch.textContent = room.links.optionalMerch.label || "OPTIONAL SUPPORT ↗";
+    links.append(merch);
   }
 
   if (room.links?.officialWebsite?.url) {
