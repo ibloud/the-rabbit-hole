@@ -30,5 +30,16 @@
       "dialogue": "The door is marked as a boundary rather than an invitation.",
       "accessibilityLabel": "Door: inspect the boundary clue."
     }
-  ]
+  ],
+  "links": {
+    "appleMusic": "https://music.apple.com/us/song/1845320838",
+    "purchase": {
+      "label": "BUY / DOWNLOAD OFFICIAL RELEASE",
+      "url": "https://renmakesmusic.bandcamp.com/album/sick-boi"
+    },
+    "officialWebsite": {
+      "label": "RENMAKESMUSIC.COM",
+      "url": "https://www.renmakesmusic.com/"
+    }
+  }
 }
