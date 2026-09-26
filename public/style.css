@@ -50,3 +50,5 @@ footer{display:flex;justify-content:space-between;color:#68656a;font-size:9px;le
 .room-media iframe{background:#000}
 
 .video-link{display:inline-block;padding:12px 0;color:inherit;font-size:10px;letter-spacing:.14em;text-decoration:underline;text-underline-offset:4px}
+
+.room-links{display:flex;flex-wrap:wrap;gap:18px;padding:14px 0 4px}.room-links a{color:inherit;font-size:10px;letter-spacing:.14em;text-decoration:underline;text-underline-offset:4px}.room-links a:hover{opacity:.7}
