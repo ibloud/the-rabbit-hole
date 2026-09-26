@@ -34,6 +34,10 @@
     "officialWebsite": {
       "label": "OFFICIAL MUSIC SOURCE ↗",
       "url": "https://www.renmakesmusic.com/"
+    },
+    "optionalMerch": {
+      "label": "OPTIONAL SUPPORT / OFFICIAL REN MERCH ↗",
+      "url": "products/ren-rabbit-hole-black-hoodie/"
     }
   }
 }
