@@ -1,5 +1,5 @@
 const root = document.querySelector("#game");
-const CACHE_BUST = "20260925-4";
+const CACHE_BUST = "20260925-5";
 const rooms = [
   "seven-sins.json",
   "sick-boi.json",
@@ -75,6 +75,33 @@ function renderRoomMedia(room) {
     media.append(audio);
   }
 
+  const links = document.createElement("div");
+  links.className = "room-links";
+  if (room.links?.appleMusic) {
+    const apple = document.createElement("a");
+    apple.href = room.links.appleMusic;
+    apple.target = "_blank";
+    apple.rel = "noopener noreferrer";
+    apple.textContent = "APPLE MUSIC ↗";
+    links.append(apple);
+  }
+  if (room.links?.purchase?.url) {
+    const buy = document.createElement("a");
+    buy.href = room.links.purchase.url;
+    buy.target = "_blank";
+    buy.rel = "noopener noreferrer";
+    buy.textContent = room.links.purchase.label || "BUY / DOWNLOAD ↗";
+    links.append(buy);
+  }
+  if (room.links?.officialWebsite?.url) {
+    const official = document.createElement("a");
+    official.href = room.links.officialWebsite.url;
+    official.target = "_blank";
+    official.rel = "noopener noreferrer";
+    official.textContent = room.links.officialWebsite.label || "OFFICIAL WEBSITE ↗";
+    links.append(official);
+  }
+  media.append(links);
   root.append(media);
 }
 
