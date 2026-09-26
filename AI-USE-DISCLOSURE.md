@@ -29,6 +29,7 @@ The current revision verified:
 
 - Apple Music catalog identity and deep links for **Seven Sins**, **Sick Boi**, and **Money Game, Pt. 3** through the Apple Music catalog integration.
 - Ren's Bandcamp pages for **Seven Sins** and **Sick Boi** as direct-release destinations.
+- The official Ren merchandise store domain and the exact **Ren Rabbit Hole Black Hoodie** product destination used by the concept-site route.
 - Public reporting about Ren's stated relationship to independence, commodification, authorship, and the music business was consulted before revising the room language.
 
 The project does not treat AI interpretation as evidence of Ren's intent. Where the experience discusses themes such as value, ownership, or commodification, that language is framed as the project's interpretive layer.
@@ -39,7 +40,7 @@ Earlier AI-assisted implementation contained material errors:
 
 1. **Incorrect Apple Music links.** At least one previously inserted Apple Music URL did not point to the intended Ren track. The current room links use catalog-verified deep links.
 2. **Incorrect commerce routing.** All three rooms previously pointed to the Sick Boi Bandcamp album while using a generic “BUY / DOWNLOAD OFFICIAL RELEASE” label. That was misleading. The current implementation uses room-specific direct-release destinations and does not describe them as an ideological conclusion.
-3. **Unverified merch claim.** Earlier output labeled a product URL as “OFFICIAL REN MERCH” without sufficient verification. That wording was too strong. The current revision removes the merch link until the exact destination can be independently verified.
+3. **Incorrect characterization of official merch.** Earlier output incorrectly treated `renmakesmerch.com` as unverified/unofficial. That was wrong. The domain is an official Ren merchandise store. The actual verification gap was narrower: AI had not independently checked the exact product path before asserting that a specific URL was the official product destination.
 4. **Overconfident ideological alignment.** Earlier AI wording implied that the experience had already been aligned with Ren's ideology. It had not. The current copy explicitly treats the tension between art, markets, authorship, and direct support as a design subject rather than claiming to speak for Ren.
 5. **Premature completion claims.** Earlier AI responses described work as fixed/live before every relevant deployment and external link had been independently verified. This disclosure corrects that record.
 
@@ -47,9 +48,7 @@ Earlier AI-assisted implementation contained material errors:
 
 The misrepresentation was not a claim that Ren endorsed the project. The more specific problem was **overstatement of verification and alignment**: AI-generated copy and links were presented with a level of certainty that the evidence did not justify.
 
-In particular, a generic purchase destination was represented as though it were a verified, room-specific official release path, and AI-generated ideological framing was presented as though it had been sufficiently grounded in Ren's own documented statements.
-
-That was inaccurate. This file records the correction rather than silently rewriting history.
+One concrete example was the merch correction: AI wrongly characterized the official store domain as unverified. The accurate distinction is that the **domain was official**, while the **exact product path required verification**. This revision makes that distinction explicit rather than silently rewriting history.
 
 ## Human review required
 
