@@ -48,3 +48,5 @@ footer{display:flex;justify-content:space-between;color:#68656a;font-size:9px;le
 .room-media{position:relative;z-index:1;margin:24px 0 6px;aspect-ratio:16/9;background:#080809;border:1px solid var(--line);overflow:hidden}
 .room-media iframe,.room-media video,.room-media img{display:block;width:100%;height:100%;border:0;object-fit:cover}
 .room-media iframe{background:#000}
+
+.video-link{display:inline-block;padding:12px 0;color:inherit;font-size:10px;letter-spacing:.14em;text-decoration:underline;text-underline-offset:4px}
