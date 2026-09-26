@@ -34,13 +34,23 @@ function renderRoomMedia(room) {
   media.className = "room-media";
 
   if (room.video) {
-    const video = document.createElement("video");
-    video.controls = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-    video.src = room.video;
-    video.setAttribute("aria-label", `${room.title} video`);
-    media.append(video);
+    if (room.video.includes("youtube.com/embed/")) {
+      const frame = document.createElement("iframe");
+      frame.src = room.video + "?rel=0&modestbranding=1";
+      frame.title = `${room.title} video`;
+      frame.loading = "lazy";
+      frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      frame.allowFullscreen = true;
+      media.append(frame);
+    } else {
+      const video = document.createElement("video");
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.src = room.video;
+      video.setAttribute("aria-label", `${room.title} video`);
+      media.append(video);
+    }
   }
 
   if (room.background && !room.video) {
@@ -81,8 +91,8 @@ function renderRoomCard(room) {
   const note = document.createElement("p");
   note.className = "media-note";
   note.textContent = room.video
-    ? "VIDEO ATTACHED"
-    : "MEDIA SLOT OPEN — NO VIDEO FILE IS PRESENT IN THIS BUILD";
+    ? "VIDEO / PUBLIC EMBED"
+    : "MEDIA SLOT OPEN — NO VIDEO ATTACHED";
   card.append(note);
 
   return card;
