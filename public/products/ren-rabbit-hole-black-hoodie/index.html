@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Rabbit Hole concept product page for the Ren Rabbit Hole Black Hoodie.">
+  <meta name="description" content="Rabbit Hole concept product page with Shopify product data and official Ren merch fallback.">
   <title>Ren Rabbit Hole Black Hoodie — Rabbit Hole Concept</title>
   <link rel="stylesheet" href="../../style.css">
   <style>
@@ -18,7 +18,10 @@
     .product-card p{color:var(--muted);line-height:1.6}
     .product-actions{display:flex;flex-wrap:wrap;gap:22px;margin-top:26px}
     .product-actions .primary{display:inline-block;border:1px solid var(--accent);padding:14px 18px;text-decoration:none;color:var(--paper)}
+    .product-status{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8d8880;margin-top:18px}
     .product-note{margin-top:30px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#68656a}
+    .product-image{display:block;width:min(420px,100%);max-height:520px;object-fit:contain;margin:0 0 28px;border:1px solid var(--line)}
+    .hidden{display:none}
   </style>
 </head>
 <body>
@@ -29,25 +32,134 @@
       <span class="eyebrow">CONCEPT SITE / PRODUCT</span>
     </nav>
 
-    <p class="product-kicker">OPTIONAL SUPPORT / OFFICIAL REN MERCH</p>
-    <h1 class="product-title">Ren Rabbit Hole Black Hoodie</h1>
-    <p class="product-copy">
-      This is the Rabbit Hole concept-site product route. It is an intentional support path,
-      not a claim that commerce resolves the questions raised by the experience.
+    <p class="product-kicker">OPTIONAL SUPPORT / SHOPIFY PRODUCT LAYER</p>
+    <h1 id="product-title" class="product-title">Ren Rabbit Hole Black Hoodie</h1>
+    <p id="product-copy" class="product-copy">
+      This is the Rabbit Hole concept-site product route. It reads the configured Shopify
+      product when that product is published; otherwise it preserves the verified official
+      Ren merch destination as the fallback.
     </p>
 
     <section class="product-card">
-      <h2>Follow the source.</h2>
-      <p>
-        The product destination below is the verified official Ren merchandise store.
-        The Rabbit Hole does not reproduce or proxy the store checkout.
+      <img id="product-image" class="product-image hidden" alt="">
+      <h2 id="product-heading">Follow the source.</h2>
+      <p id="product-description">
+        Commerce stays separate from the story. The Rabbit Hole can surface a Shopify product
+        without becoming the checkout system itself.
       </p>
+
       <div class="product-actions">
-        <a class="primary" href="https://renmakesmerch.com/products/ren-rabbit-hole-black-hoody" target="_blank" rel="noopener noreferrer">OPEN OFFICIAL REN MERCH ↗</a>
+        <a id="product-link" class="primary"
+           href="https://renmakesmerch.com/products/ren-rabbit-hole-black-hoody"
+           target="_blank" rel="noopener noreferrer">OPEN OFFICIAL REN MERCH ↗</a>
         <a href="../../">RETURN TO THE ROOMS</a>
       </div>
-      <p class="product-note">External commerce destination / official store / product path verified 2026-09-25</p>
+
+      <p id="product-status" class="product-status">Checking Shopify product layer…</p>
+      <p class="product-note">Shopify source / public product read / official fallback retained</p>
     </section>
   </main>
+
+  <script>
+    const SHOPIFY_DOMAIN = "keb5k1-ud.myshopify.com";
+    const SHOPIFY_API_VERSION = "2026-07";
+    const PRODUCT_HANDLE = "ren-rabbit-hole-black-hoody";
+    const OFFICIAL_FALLBACK = "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoody";
+
+    const query = `
+      query ProductByHandle($handle: String!) {
+        product(handle: $handle) {
+          title
+          description
+          handle
+          onlineStoreUrl
+          availableForSale
+          featuredImage { url altText }
+          priceRange {
+            minVariantPrice { amount currencyCode }
+            maxVariantPrice { amount currencyCode }
+          }
+        }
+      }
+    `;
+
+    const titleEl = document.querySelector("#product-title");
+    const headingEl = document.querySelector("#product-heading");
+    const copyEl = document.querySelector("#product-copy");
+    const descriptionEl = document.querySelector("#product-description");
+    const linkEl = document.querySelector("#product-link");
+    const statusEl = document.querySelector("#product-status");
+    const imageEl = document.querySelector("#product-image");
+
+    async function readShopifyProduct() {
+      const endpoint = `https://${SHOPIFY_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
+
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          query,
+          variables: {handle: PRODUCT_HANDLE}
+        })
+      });
+
+      if (!response.ok) throw new Error(`Shopify HTTP ${response.status}`);
+
+      const payload = await response.json();
+      if (payload.errors?.length) throw new Error(payload.errors[0].message);
+
+      return payload.data?.product || null;
+    }
+
+    function formatPrice(product) {
+      const price = product.priceRange?.minVariantPrice;
+      if (!price) return "";
+      try {
+        return new Intl.NumberFormat(undefined, {
+          style: "currency",
+          currency: price.currencyCode
+        }).format(Number(price.amount));
+      } catch {
+        return `${price.currencyCode} ${price.amount}`;
+      }
+    }
+
+    async function hydrateProduct() {
+      try {
+        const product = await readShopifyProduct();
+
+        if (!product) {
+          statusEl.textContent = "SHOPIFY PRODUCT NOT PUBLISHED / USING OFFICIAL FALLBACK";
+          return;
+        }
+
+        titleEl.textContent = product.title;
+        headingEl.textContent = formatPrice(product) || "Shop product";
+        descriptionEl.textContent = product.description || "Product data supplied by Shopify.";
+        copyEl.textContent = "Live product data is being read from the configured Shopify storefront. The story and commerce layers remain separate.";
+
+        if (product.featuredImage?.url) {
+          imageEl.src = product.featuredImage.url;
+          imageEl.alt = product.featuredImage.altText || product.title;
+          imageEl.classList.remove("hidden");
+        }
+
+        if (product.onlineStoreUrl) {
+          linkEl.href = product.onlineStoreUrl;
+          linkEl.textContent = product.availableForSale
+            ? "OPEN SHOPIFY PRODUCT ↗"
+            : "VIEW SHOPIFY PRODUCT ↗";
+        }
+
+        statusEl.textContent = product.availableForSale
+          ? "SHOPIFY PRODUCT / AVAILABLE"
+          : "SHOPIFY PRODUCT / NOT CURRENTLY AVAILABLE";
+      } catch (error) {
+        statusEl.textContent = "SHOPIFY READ UNAVAILABLE / USING OFFICIAL FALLBACK";
+      }
+    }
+
+    hydrateProduct();
+  </script>
 </body>
 </html>
