@@ -1,5 +1,5 @@
 const root = document.querySelector("#game");
-const CACHE_BUST = "20260925-3";
+const CACHE_BUST = "20260925-4";
 const rooms = [
   "seven-sins.json",
   "sick-boi.json",
@@ -36,12 +36,19 @@ function renderRoomMedia(room) {
   if (room.video) {
     if (room.video.includes("youtube.com/embed/")) {
       const frame = document.createElement("iframe");
-      frame.src = room.video + "?rel=0&modestbranding=1";
+      frame.src = room.video.replace("www.youtube.com/embed/", "www.youtube-nocookie.com/embed/") + "?rel=0&modestbranding=1&playsinline=1";
       frame.title = `${room.title} video`;
       frame.loading = "lazy";
       frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       frame.allowFullscreen = true;
       media.append(frame);
+      const watch = document.createElement("a");
+      watch.className = "video-link";
+      watch.href = room.video.replace("/embed/", "/watch?v=");
+      watch.target = "_blank";
+      watch.rel = "noopener noreferrer";
+      watch.textContent = "OPEN VIDEO ON YOUTUBE ↗";
+      media.append(watch);
     } else {
       const video = document.createElement("video");
       video.controls = true;
