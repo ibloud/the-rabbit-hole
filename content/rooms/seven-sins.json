@@ -2,7 +2,7 @@
   "id": "seven-sins",
   "title": "Seven Sins",
   "track": "narrative",
-  "description": "A room built around discovery, choice, and consequence.",
+  "description": "A room about contradiction, consequence, and what happens when a story refuses a single moral.",
   "background": null,
   "video": "https://www.youtube.com/embed/bXS2MF5XW60",
   "audio": null,
@@ -11,45 +11,33 @@
     {
       "id": "threshold",
       "label": "Threshold",
-      "position": {
-        "x": 24,
-        "y": 48
-      },
+      "position": {"x": 24, "y": 48},
       "type": "dialogue",
-      "dialogue": "The threshold is not a doorway so much as a warning.",
+      "dialogue": "The threshold is not a doorway so much as a warning: looking changes what you can see.",
       "accessibilityLabel": "Threshold: inspect the room's opening clue."
     },
     {
       "id": "mirror",
       "label": "Mirror",
-      "position": {
-        "x": 68,
-        "y": 35
-      },
+      "position": {"x": 68, "y": 35},
       "type": "dialogue",
-      "dialogue": "The mirror gives you the wrong answer first.",
+      "dialogue": "The mirror gives you the wrong answer first. The point is not to sell you the answer; it is to make you question the frame.",
       "accessibilityLabel": "Mirror: inspect the second clue."
     }
   ],
   "links": {
-    "appleMusic": "https://music.apple.com/us/song/1764550134",
-    "purchase": {
-      "label": "BUY / DOWNLOAD OFFICIAL RELEASE",
-      "url": "https://renmakesmusic.bandcamp.com/album/sick-boi"
+    "appleMusic": "https://music.apple.com/us/album/seven-sins/1764550131?i=1764550134",
+    "directRelease": {
+      "label": "DIRECT RELEASE / BANDCAMP ↗",
+      "url": "https://renmakesmusic.bandcamp.com/track/seven-sins"
     },
     "officialWebsite": {
-      "label": "RENMAKESMUSIC.COM",
+      "label": "OFFICIAL MUSIC SOURCE ↗",
       "url": "https://www.renmakesmusic.com/"
     },
-    "officialMerch": [
-      {
-        "label": "OFFICIAL REN MERCH — RABBIT HOLE HOODIE",
-        "url": "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoodie"
-      },
-      {
-        "label": "OFFICIAL REN MERCH STORE ↗",
-        "url": "https://renmakesmerch.com/"
-      }
-    ]
+    "optionalMerch": {
+      "label": "OPTIONAL SUPPORT / RABBIT HOLE HOODIE ↗",
+      "url": "https://renmakesmerch.com/products/ren-rabbit-hole-black-hoody"
+    }
   }
 }
