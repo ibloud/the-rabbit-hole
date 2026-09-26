@@ -11,7 +11,7 @@ You find a corridor with three doors and a note pinned between them.
 
 The note is written in three different inks. The last line is the same in all three hands:
 
-*If you want the answer, stop looking for a single door.*
+If you want the answer, stop looking for a single door.
 
 The corridor hums with the faint sound of a record playing somewhere below the floor.
 
@@ -46,7 +46,7 @@ Then it shows the room full of people who are not there.
 
 A sentence appears in the condensation:
 
-*Every story chooses what to leave outside the frame.*
+Every story chooses what to leave outside the frame.
 
 + [Wipe the sentence away]
     The glass clears. For a moment you feel relieved. Then you realize you have erased the only instruction you were given.
@@ -61,7 +61,7 @@ A sentence appears in the condensation:
 ~ room = "seven-sins"
 You trace the seven words with one finger:
 
-**witness / appetite / guilt / image / money / silence / choice**
+witness / appetite / guilt / image / money / silence / choice
 
 The final word is carved deeper than the others.
 
@@ -86,7 +86,7 @@ The mirror is blank now.
 
 For the first time, you notice a second door reflected in it. There is no second door in the room.
 
-Its handle is marked with a single word: **OWN**.
+Its handle is marked with a single word: OWN.
 
 You reach for it, but the reflection reaches first.
 
@@ -101,9 +101,9 @@ The second room smells like dust and warm electronics. A record spins on a turnt
 
 Beside it sits a contract. Every line is blacked out except two:
 
-**WHO MADE THIS?**
+WHO MADE THIS?
 
-**WHO GETS TO DECIDE WHAT IT MEANS?**
+WHO GETS TO DECIDE WHAT IT MEANS?
 
 + [Examine the record] -> sick_record
 + [Read the surviving lines of the contract] -> sick_contract
@@ -114,7 +114,7 @@ The record keeps spinning even after you touch the turntable.
 
 On the label, someone has written:
 
-*An artifact can leave its maker's hands without becoming nobody's story.*
+An artifact can leave its maker's hands without becoming nobody's story.
 
 You turn the record over. The other side is blank except for a date.
 
@@ -152,7 +152,7 @@ The turntable stops.
 
 A small green light comes on beneath it. The light projects one sentence onto the wall:
 
-*Support can be voluntary. Ownership can be complicated. Do not confuse the two.*
+Support can be voluntary. Ownership can be complicated. Do not confuse the two.
 
 The sentence disappears before you can photograph it.
 
@@ -166,9 +166,9 @@ The third room is a table under a single light.
 
 Three columns are written in chalk:
 
-**VALUE / PRICE / COST**
+VALUE / PRICE / COST
 
-Someone has drawn a line through the word *price* and then drawn it back again.
+Someone has drawn a line through the word price and then drawn it back again.
 
 A ledger lies open beside a set of dice. The first page contains no numbers, only names.
 
@@ -187,9 +187,9 @@ But the ledger never records what someone thought they were buying.
 
 At the bottom of the page you find three blank fields:
 
-**WHO BENEFITED?**
-**WHO DECIDED?**
-**WHO COULD WALK AWAY?**
+WHO BENEFITED?
+WHO DECIDED?
+WHO COULD WALK AWAY?
 
 + [Fill in the first field]
     You write a name. The ink spreads until the name becomes a stain.
@@ -227,7 +227,7 @@ The three chalk columns are gone.
 
 In their place is one sentence:
 
-*Value is not the same thing as price. But price still changes what people can do.*
+Value is not the same thing as price. But price still changes what people can do.
 
 You hear the corridor behind you.
 

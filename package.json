@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-content.mjs",
-    "test": "node tests/runtime/smoke.mjs",
+    "test": "npm run build && node tests/runtime/smoke.mjs && node tests/runtime/story.mjs",
     "build": "node scripts/build.mjs",
     "build:itch": "node scripts/build-itch.mjs"
   },
