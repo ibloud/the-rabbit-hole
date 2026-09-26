@@ -4,9 +4,9 @@
   "track": "narrative",
   "description": "A room about value, leverage, and the choices that become visible when the price of entry changes.",
   "background": null,
-  "video": null,
+  "video": "https://www.youtube.com/embed/nyWbun_PbTc",
   "audio": null,
-  "contentNote": "Prototype content fixture. Replace with cleared production media.",
+  "contentNote": "Public video embed: Ren — Money Game Pt. 3 (Official Music Video).",
   "hotspots": [
     {
       "id": "table",
